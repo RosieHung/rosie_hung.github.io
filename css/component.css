@@ -621,6 +621,7 @@
 	display: flex;
 	justify-content: center;
 	flex-flow: wrap;
+	margin-top: 80px;
 }
 
 .skill-card__title{
@@ -653,6 +654,8 @@
 	transform: translateY(-50%);
 	background-color: #fefefe;
 	border:1px solid #eeeeee;
+	margin-bottom: -40px;
+
 }
 
 .skill-card__icon .image{
@@ -668,7 +671,6 @@
 .skill-card__icon{
 	top: 0;
 	left: 50%;
-	margin-bottom: -40px;
 	transform: translate(-50%,-50%);
 }
 .skill-card{
