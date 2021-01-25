@@ -1,7 +1,15 @@
+function isMobile() {
+
+  try{ document.createEvent("TouchEvent"); return true; }
+
+  catch(e){ return false;}
+
+}
+
 var bodyClass = document.body.classList,
 lastScrollY = 100;
 window.addEventListener('scroll', function(){
-	if($(window).width() < 767)
+	if(isMobile())
 {
     // JavaScript here 
     // 當視窗寬度小於767px時執行
