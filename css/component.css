@@ -475,8 +475,8 @@
 }
 @media(max-width: 480px){
 	.hero{
-		padding-top: 80px;
-		padding-bottom: 80px;
+		padding-top: 70px;
+		padding-bottom: 40px;
 	}
 }
 
@@ -528,7 +528,7 @@
 
 @media(max-width: 768px){
 	.quote{
-		padding-top: 90px;
+		padding-top: 70px;
 		padding-bottom: 40px;
 	}
 }
@@ -544,17 +544,33 @@
 .quote__photo{
 	height: 350px;
 	width: 350px;
-	border-radius: 20px;
+	border-radius: 5px;
 	overflow: hidden;
 	text-align: center;
 }
 
 .quote__photo img{
 	/*height: 100%;*/
-	/*width: 100%;*/
+	width: 110%;
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: -60px;
+	left: -30px;
+	object-fit: cover;
+	object-position: 20% 50%;
+}
+
+@media(max-width: 768px){
+	.quote__photo{
+		width: 100%;
+
+	}
+
+	.quote__photo img{
+		width: 110%;
+		top: -25%;
+		left: -7%;
+		max-height: 200%;
+	}
 }
 
 /*.quote__title{
@@ -634,7 +650,7 @@
 	border-radius: 10px;
 	/*box-shadow: 0 3px 10px rgba(0,0,0,0.5);*/
 	left: 0;
-	/*transform: translateY(-50%);*/
+	transform: translateY(-50%);
 	background-color: #fefefe;
 	border:1px solid #eeeeee;
 }
@@ -652,6 +668,7 @@
 .skill-card__icon{
 	top: 0;
 	left: 50%;
+	margin-bottom: -40px;
 	transform: translate(-50%,-50%);
 }
 .skill-card{
@@ -665,6 +682,11 @@
 
 .skill-group{
 	padding-bottom: 0;
+}
+
+.skill-item{
+	margin-top: 20px;
+	margin-bottom: 50px;
 }
 
 }
@@ -754,7 +776,7 @@
 @media(max-width: 768px){
 	.experience{
 		padding-bottom: 40px;
-		padding-top: 40px;
+		padding-top: 60px;
 	}
 }
 
