@@ -50,6 +50,40 @@
 	opacity: 0.6;
 }
 
+.move_circle{
+	height: 250vh;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.m_c_yellow{
+	top: 6%;
+	left: -3%;
+	border:1px solid #f9b10b;
+	width: 200px;
+	height: 200px;
+}
+
+.m_c_green{
+	top: 20%;
+	left: 80%;
+	border:1px solid #2AA1B7;
+	width: 140px;
+	height: 140px;
+}
+
+.circle{
+	border-radius: 999em;
+	position: absolute;
+}
+
+@media(max-width: 768px){
+	.m_c_yellow{
+		top: -2%;
+	}
+}
 
 /*btn*/
 /*---------------------------*/
