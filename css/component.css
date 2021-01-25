@@ -53,14 +53,14 @@
 .move_circle{
 	height: 250vh;
 	width: 100%;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 }
 
 .m_c_yellow{
-	top: 6%;
-	left: -3%;
+	top: 3%;
+	left: 4%;
 	border:1px solid #f9b10b;
 	width: 200px;
 	height: 200px;
@@ -68,7 +68,7 @@
 
 .m_c_green{
 	top: 20%;
-	left: 80%;
+	left: 75%;
 	border:1px solid #2AA1B7;
 	width: 140px;
 	height: 140px;
