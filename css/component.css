@@ -51,7 +51,7 @@
 }
 
 .move_circle{
-	height: 250vh;
+	height: 500px;
 	width: 100%;
 	position: absolute;
 	top: 0;
@@ -59,16 +59,16 @@
 }
 
 .m_c_yellow{
-	top: 3%;
-	left: 4%;
+	top: 23%;
+	left: 82%;
 	border:1px solid #f9b10b;
 	width: 200px;
 	height: 200px;
 }
 
 .m_c_green{
-	top: 20%;
-	left: 75%;
+	top: 80%;
+	left: 28%;
 	border:1px solid #2AA1B7;
 	width: 140px;
 	height: 140px;
@@ -759,7 +759,7 @@
 .listskill .circle{
   width:50px;
   height:50px;
-  background-color: #fff;
+  background-color: #f1eeed;
   border-radius:50%;
   position:relative;
   overflow:hidden;
@@ -972,7 +972,7 @@
 }
 
 .work-item{
-	/*margin-bottom: 160px;*/
+	margin-bottom: 160px;
 }
 
 .work-item__text{
@@ -1050,7 +1050,7 @@
 .imgbox{
 	width: 100%;
 	overflow: hidden;
-	border:1px solid #000;
+	/*border:1px solid #000;*/
 	opacity: 0.3;
 	transition: all 0.3s;
 }
@@ -1067,6 +1067,10 @@
 
 .imgbox__inner.imgbox__inner-4-3{
 	padding-top: calc(100% * 3 / 4);
+}
+
+.imgbox__inner.imgbox__inner-16-9{
+	padding-top: calc(100% * 9 / 16);
 }
 
 .imgbox__inner .image{
