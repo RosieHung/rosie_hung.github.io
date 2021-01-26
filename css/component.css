@@ -769,7 +769,7 @@
 .listskill .circle::after{
   content:"";
   display:block;
-  background-color: #fff;
+  background-color: #f1eeed;
   width:calc(100% - 20px);
   height:calc(100% - 20px);
   border-radius:50%;
