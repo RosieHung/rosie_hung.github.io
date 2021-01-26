@@ -584,13 +584,13 @@
 }
 
 .quote__photo img{
-	/*height: 100%;*/
-	width: 110%;
+	height: 100%;
+	width: 100%;
 	position: absolute;
-	top: -60px;
-	left: -30px;
+	top: 0;
+	left: 0;
 	object-fit: cover;
-	object-position: 20% 50%;
+	/*object-position: 20% 50%;*/
 }
 
 @media(max-width: 768px){
@@ -601,7 +601,7 @@
 
 	.quote__photo img{
 		width: 110%;
-		top: -25%;
+		top: 0;
 		left: -7%;
 		max-height: 200%;
 	}
