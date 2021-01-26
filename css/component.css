@@ -80,6 +80,12 @@
 }
 
 @media(max-width: 768px){
+	.move_circle{
+		overflow: hidden;
+	}
+	.m_c_green{
+		top: 85%;
+	}
 	.m_c_yellow{
 		top: -2%;
 	}
