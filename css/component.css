@@ -24,10 +24,28 @@
  * Footer
  * Parallax graphic
 **/
-
 /*-------------------------*/
 /* $Elements 
 ---------------------------*/
+body::-webkit-scrollbar-track{
+	background: #333; 
+}
+body::-webkit-scrollbar{
+	width: 5px;
+}
+body::-webkit-scrollbar-thumb{
+	background: #f9b10b; 
+}
+body{
+	min-height: 100vh;
+  	overflow: hidden;
+}
+*{
+	cursor: none;
+}
+
+
+
 .bg{
 	position: fixed;
 	top: 0;
@@ -50,45 +68,32 @@
 	opacity: 0.6;
 }
 
-.move_circle{
-	height: 500px;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
+/*SET TRANSFORM VALUES*/
+
+.hero.up-scroll {
+  transform: translate3d(0,-$parallax-offset / 2,0);
+  .content-wrapper {
+    transform: translateY($parallax-offset / 2);
+  }
+  + .background {
+    transform: translate3d(0,$parallax-offset,0);
+      .content-wrapper {
+        transform: translateY($parallax-offset);
+      }
+    }
 }
 
-.m_c_yellow{
-	top: 23%;
-	left: 82%;
-	border:1px solid #f9b10b;
-	width: 200px;
-	height: 200px;
-}
-
-.m_c_green{
-	top: 80%;
-	left: 28%;
-	border:1px solid #2AA1B7;
-	width: 140px;
-	height: 140px;
-}
-
-.circle{
-	border-radius: 999em;
-	position: absolute;
-}
-
-@media(max-width: 768px){
-	.move_circle{
-		overflow: hidden;
-	}
-	.m_c_green{
-		top: 85%;
-	}
-	.m_c_yellow{
-		top: -2%;
-	}
+.hero.down-scroll {
+  transform: translate3d(0,-(100vh + $parallax-offset),0);
+  .content-wrapper {
+    transform: translateY($content-offset);
+  }
+  + .background:not(.down-scroll) {
+    transform: translate3d(0,-$parallax-offset / 2,0);
+      .content-wrapper {
+        transform: translateY($parallax-offset / 2);
+      }
+  }
 }
 
 /*btn*/
@@ -133,7 +138,6 @@
 	border-radius: 2px;
 	outline: none;
 	/* interact */
-	cursor: pointer;
 	overflow: hidden;
 	-webkit-user-select: none;
        -moz-user-select: none;
@@ -508,16 +512,23 @@
 /* $About
 ---------------------------*/
 
-.hero{
-	padding-top: 20vh;
-	padding-bottom: 10vh;
-	top: 0;
-}
 @media(max-width: 480px){
 	.hero{
 		padding-top: 70px;
 		padding-bottom: 40px;
 	}
+}
+
+.hero .container{
+	height: 100vh;
+}
+
+.hero__content{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
 }
 
 .hero__heading{
@@ -555,6 +566,51 @@
 	.hero__bg{
 		background-size: 200px;
 	}
+}
+
+.hero__arrow{
+	border:2px solid #333;
+	position: absolute;
+	bottom: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 3;
+	height: 50px;
+	width: 35px;
+	border-radius: 20px;
+	background-color: transparent;
+}
+
+.hero__arrow:after{
+	content: "";
+	width: 2px;
+	height: 15px;
+	background-color: #333;
+	position: absolute;
+	top: 5px;
+	left: 50%;
+	transform: translateX(-50%);
+	animation: handArrow 1s ease infinite;
+}
+
+
+@keyframes handArrow{
+	0%{
+		height: 0;
+	}
+	100%{
+		height: 15px;
+	}
+}
+
+.hero__text{
+	margin-bottom: 24px;
+	font-size: 18px;
+	line-height: 40px;
+	font-weight: 300;
+	overflow-wrap: anywhere;
+	color: #484848;
+	width: 1000px;
 }
 
 /*-------------------------*/
@@ -969,6 +1025,7 @@
 	padding-bottom: 80px;
 	border-top: 1px solid #ececec;
 	background-color: #f1eeed;
+	height: 100vh;
 }
 
 /* worklist
@@ -1100,15 +1157,19 @@
 /* $Contact
 ---------------------------*/
 .contact{
-	padding-top: 80px;
-	padding-bottom: 80px;
+	/*padding-top: 40px;*/
+	/*padding-bottom: 40px;*/
 	border-top: 1px solid #ececec;
+	position: fixed;
+	bottom: 60px;
+	height: 20px;
+	/*height: 100vh;*/
 }
 
 .rosie-email{
-	margin-bottom: 24px;
-	font-size: 28px;
-	line-height: 40px;
+	/*margin-bottom: 24px;*/
+	font-size: 16px;
+	line-height: 20px;
 	text-align: center;
 	text-decoration: : none;
 	display: block;
@@ -1153,4 +1214,39 @@
 }
 .list__item:hover{
 	color: #2AA1B7;
+}
+
+
+
+/*-------------------------*/
+/* $Cursor 
+---------------------------*/
+.cursor-dot,
+.cursor-dot-outline {
+	z-index: 100;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+ 	-webkit-transition: -webkit-transform 300ms cubic-bezier(.175, .885, .32, 1.275);
+ 	transition: -webkit-transform 300ms cubic-bezier(.175, .885, .32, 1.275);
+ 	transition: transform 300ms cubic-bezier(.175, .885, .32, 1.275);
+	transition: transform 300ms cubic-bezier(.175, .885, .32, 1.275),
+	-webkit-transform 300ms cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.cursor-dot {
+    width: 8px;
+    height:8px;
+    background-color: rgba(249, 177, 11,0.7);
+}
+
+.cursor-dot-outline {
+    width: 50px;
+    height: 50px;
+    border:1px solid rgba(0,0,0,0.4);
+    background-color: transparent;
 }

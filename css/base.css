@@ -2254,9 +2254,9 @@ hr{
 .fa-hand-spock-o:before {
   content: "\f259";
 }
-.fa-hand-pointer-o:before {
+/*.fa-hand-pointer-o:before {
   content: "\f25a";
-}
+}*/
 .fa-hand-peace-o:before {
   content: "\f25b";
 }

@@ -12,7 +12,6 @@
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/jquery.fancybox.css">
 	<link rel="stylesheet" href="css/component.css">
-	<!-- JS -->
 </head>
 <body>
 
@@ -86,37 +85,29 @@
 
 	<!-- Start main -->
 	<section class="main">
-		<!-- start circle -->
-			<div class="container">
-				<div class="move_circle">
-					<div class="circle m_c_yellow move_c"></div>
-					<div class="circle m_c_green move_c"></div>
-				</div>
-			</div>
-		<!-- End circle -->
 
 		<!-- start about -->
-		<div class="hero">
+		<div class="hero rm">
 			<div class="hero__bg">
-				
 			</div>
 			<div class="container">
 				<div class="hero__content wow bounceInLeft" data-wow-duration="1.9s">
 					<h1 class="hero__heading">Hello,I'm Rosie</h1>
-					<p class="quote__text">
+					<p class="hero__text">
 						一名熱愛追求新事物及挑戰性的女子，喜歡富有美感且實用的設計，也熱愛鑽研令人愉悅的動態體驗。
 					</p>
 					<a href="about" class="btn btn--primary">ABOUT ME</a>
 					<a href="resume_Rosiehung.pdf" target="_blank" class="btn btn--positive">RESUME</a>
 				</div>
 			</div>
+			<div class="hero__arrow"></div>
 		</div>
 		<!-- End about -->
 
 
 		<!-- Start work -->
 
-		<div class="work" id="work">
+		<div class="work rm" id="work">
 			<div class="container wow fadeInUp">
 				<h2 class="subtitle u-text-center">設計案例</h2>
 				<div class="work-list">
@@ -189,7 +180,7 @@
 
 		<!-- Start contact -->
 
-		<div class="contact" id="contact">
+		<div class="contact rm" id="contact">
 			<div class="cotainer">
 				<h4 class="heading-9 u-text-center">如果你想聯繫我或與我交流，歡迎透過下方信箱聯絡我</h4>
 				<a href="mailto:mei860821@gmail.com" class="rosie-email u-text-center">mei860821@gmail.com</a>
@@ -203,6 +194,9 @@
 	</section>
 	<!-- End main -->
 
+	<div class="cursor-dot-outline"></div>
+	<div class="cursor-dot"></div>
+
 	<!-- Start footer -->
 	<footer>
 		
@@ -215,64 +209,10 @@
 	<script type="text/javascript" src="js/wow.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
 	<script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+	<script type="text/javascript" src="js/cursor.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
-	<script type="text/javascript" src="js/headerhide.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 	<!-- End Js/Jq -->
-
-	<script>
-        $(function(){
-            $('#toTop').click(function(){
-                $('html,body').animate({scrollTop: '0px'},800)
-            });
-            $('#nav_work').click(function(){
-                $('html,body').animate({scrollTop:$('#work_page').offset().top},800)
-            });
-            $('#nav_contact').click(function(){
-                $('html,body').animate({scrollTop:$('#contact_page').offset().top},800)
-            });
-            $("#bule_btn").click(function(){
-                $(".bg").animate({backgroundColor:"#526CB9"}, 300);
-                $(".main_box").animate({color:"#FFD88B"}, 300);
-                $(".social_nav_btn").animate({color:"#E4D9CD"}, 300);
-
-            });
-            $("#white_btn").click(function(){
-                $(".bg").animate({backgroundColor:"#E4D9CD"}, 300);
-                $(".main_box").animate({color:"#F96D5F"}, 300);
-                $(".social_nav_btn").animate({color:"#526CB9"}, 300);
-            });
-        })
-
-        var items = document.getElementsByClassName("move_c");
-
-        document.addEventListener('mousemove', function (evt){
-        var x = evt.clientX;
-        var y = evt.clientY;
-  
-        // console.log(x);
-  
-        var winWidth = window.innerWidth;
-        var winHeight = window.innerHeight;
-
-        var halfWidth = winWidth / 2;
-        var halfHeight = winHeight / 2;
-
-        var rx = x - halfWidth;
-        var ry = halfHeight - y;
-        
-        var length = items.length;
-        var max = 10;
-
-
-		for (var i = 0 ; i < length ; i++) {
-		var dx = (items[i].getBoundingClientRect().width/max)*(rx / -halfWidth);
-		var dy = (items[i].getBoundingClientRect().height/max)*(ry / halfHeight);
-		items[i].style['transform'] = items[i].style['-webkit-transform'] = 'translate('+dx+'px,'+dy+'px)';
-		}
-		}, false);
-
-        
-    </script>
 
 </body>
 </html>
