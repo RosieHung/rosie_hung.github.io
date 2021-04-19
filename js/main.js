@@ -25,51 +25,22 @@ function scrollPage() {
   });
 
   //手機版滑動
-  var startx, starty;
-    //获得角度
-    function getAngle(angx, angy) {
-        return Math.atan2(angy, angx) * 180 / Math.PI;
-    };
- 
-    //根据起点终点返回方向 1向上 2向下
-    function getDirection(startx, starty, endx, endy) {
-        var angx = endx - startx;
-        var angy = endy - starty;
-        var result = 0;
- 
-        var angle = getAngle(angx, angy);
-        if (angle >= -135 && angle <= -15) {
-            result = 1;
-        } else if (angle > 15 && angle < 135) {
-            result = 2;
-        }
- 
-        return result;
-    }
-    //手指接触屏幕
-    document.addEventListener("touchstart", function(e) {
-        startx = e.touches[0].pageX;
-        starty = e.touches[0].pageY;
-    }, false);
-    //手指离开屏幕
-    document.addEventListener("touchend", function(e) {
-        var endx, endy;
-        endx = e.changedTouches[0].pageX;
-        endy = e.changedTouches[0].pageY;
-        var direction = getDirection(startx, starty, endx, endy);
-        switch (direction) {
-            case 1:
-                navigateDown();
-                break;
-            case 2:
-                navigateUp();
-                break;
-            default:
-        }
-    }, false);
+  $("body").on("touchstart", function(e) {
+	e.preventDefault();
+	startY = e.originalEvent.changedTouches[0].pageY;
+	});
+	$("body").on("touchmove", function(e) {
+	e.preventDefault();
+	moveEndY = e.originalEvent.changedTouches[0].pageY,
+	Y = moveEndY - startY;
+	if ( Y > 0) {
+	navigateUp();
+	}
+	else if ( Y < 0 ) {
+	 navigateDown();
+	}
+	});
 }
-
-
 
 // 上滾動
 function navigateUp () {

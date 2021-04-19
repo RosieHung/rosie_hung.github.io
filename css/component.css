@@ -42,6 +42,7 @@ body{
 }
 *{
 	cursor: none;
+	touch-action: pan-y;
 }
 
 
