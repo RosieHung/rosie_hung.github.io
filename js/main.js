@@ -59,10 +59,10 @@ function scrollPage() {
         var direction = getDirection(startx, starty, endx, endy);
         switch (direction) {
             case 1:
-                navigateUp();
+                navigateDown();
                 break;
             case 2:
-                navigateDown();
+                navigateUp();
                 break;
             default:
         }
