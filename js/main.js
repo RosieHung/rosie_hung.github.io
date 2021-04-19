@@ -25,7 +25,13 @@ function scrollPage() {
   });
 
   //手機版滑動
-  $("body").on("touchstart", function(e) {
+  var windowHeight = $(window).height(),
+	$body = $("body");
+	// console.log($(window).height());
+	// console.log($('body').height());
+	$body.css("height", windowHeight);
+
+  $body.on("touchstart", function(e) {
 	e.preventDefault();
 	startY = e.originalEvent.changedTouches[0].pageY;
 	});
