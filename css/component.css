@@ -1047,6 +1047,10 @@ body::-webkit-scrollbar-thumb{
 	top: 10%;
 }
 
+.work h3{
+	font-size: 24px;
+}
+
 /* worklist
 ---------------------------*/
 
@@ -1156,7 +1160,7 @@ body::-webkit-scrollbar-thumb{
 				position: relative;
 				left: 0;
 				top: 10px;
-				width: 18em;
+				width: 20em;
 				margin-right: -2em;
 				margin-bottom: 3em;
 			}
@@ -1175,15 +1179,15 @@ body::-webkit-scrollbar-thumb{
 
 		/* Carousel */
 
-			.carousel {
+			/*.work__item article {
 				padding: 1.5em 0 1.5em 0;
-			}
+			}*/
 
-				.carousel .reel {
+				.work__item article .reel {
 					padding: 0 1.5em 0 1.5em;
 				}
 
-				.carousel article {
+				.work__item article article {
 					width: 18em;
 					margin: 0 1.25em 0 0;
 				}
