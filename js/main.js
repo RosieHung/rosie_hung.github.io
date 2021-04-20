@@ -135,16 +135,6 @@ window.addEventListener('scroll', function(){
 			}, 100);
 		});
 
-	// Dropdowns.
-		$('#nav > ul').dropotron({
-			mode: 'fade',
-			speed: 350,
-			noOpenerFade: true,
-			alignment: 'center'
-		});
-
-	// Scrolly.
-		$('.scrolly').scrolly();
 
 	// Nav.
 
@@ -155,25 +145,6 @@ window.addEventListener('scroll', function(){
 				'</div>'
 			)
 				.appendTo($body);
-
-		// Panel.
-			$(
-				'<div id="navPanel">' +
-					'<nav>' +
-						$('#nav').navList() +
-					'</nav>' +
-				'</div>'
-			)
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					target: $body,
-					visibleClass: 'navPanel-visible'
-				});
 
 	// Carousels.
 		$('.work__item').each(function() {
@@ -200,8 +171,8 @@ window.addEventListener('scroll', function(){
 						mode: 'middle',
 						top: '-20vh',
 						bottom: '-20vh',
-						enter: function() {
-
+	
+					enter: function() {
 							var	timerId,
 								limit = $items.length - Math.ceil($window.width() / itemWidth);
 
@@ -289,8 +260,8 @@ window.addEventListener('scroll', function(){
 							.css('overflow-y', 'hidden')
 							.css('overflow-x', 'scroll')
 							.scrollLeft(0);
-						$forward.hide();
-						$backward.hide();
+						$forward.show();
+						$backward.show();
 
 					}
 					else {
