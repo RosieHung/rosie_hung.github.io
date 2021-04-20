@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/layout.css">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/jquery.fancybox.css">
+	<link rel="stylesheet" href="css/stars.css">
 	<link rel="stylesheet" href="css/component.css">
 </head>
 <body>
@@ -88,11 +89,33 @@
 
 		<!-- start about -->
 		<div class="hero rm">
-			<div class="hero__bg">
-			</div>
-			<div class="container">
-				<div class="hero__content wow bounceInLeft" data-wow-duration="1.9s">
-					<h1 class="hero__heading">Hello,I'm Rosie</h1>
+			<div class="hero__bg"></div>
+			<div id="stars"></div>
+			<div id="stars2"></div>
+			<div id="stars3"></div>
+			<div class="container wow bounceInLeft" data-wow-duration="1.9s">
+				<div class="hero__content">
+					<!-- The two texts -->
+					<div class="hero__heading">
+						<span id="text1"></span>
+						<span id="text2"></span>
+					</div>
+
+					<!-- The SVG filter used to create the merging effect -->
+					<svg id="filters">
+						<defs>
+							<filter id="threshold">
+								<!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
+								<feColorMatrix in="SourceGraphic"
+										type="matrix"
+										values="1 0 0 0 0
+												0 1 0 0 0
+												0 0 1 0 0
+												0 0 0 255 -120" />
+							</filter>
+						</defs>
+					</svg>
+					<!-- <h1 class="hero__heading">Hello,I'm Rosie</h1> -->
 					<p class="hero__text">
 						一名熱愛追求新事物及挑戰性的女子，喜歡富有美感且實用的設計，也熱愛鑽研令人愉悅的動態體驗。
 					</p>
@@ -108,29 +131,113 @@
 		<!-- Start work -->
 
 		<div class="work rm" id="work">
-			<div class="container wow fadeInUp">
-				<h2 class="subtitle u-text-center">設計案例</h2>
-				<div class="work-list">
+			<h2 class="subtitle u-text-center">設計案例</h2>
+			<section class="work__item">
+					<div class="reel">
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Pulvinar sagittis congue</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Fermentum sagittis proin</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Ultrices urna sit lobortis</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Varius magnis sollicitudin</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Pulvinar sagittis congue</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Fermentum sagittis proin</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Ultrices urna sit lobortis</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Varius magnis sollicitudin</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+					</div>
+				</section>
+			<!-- <div class="container wow fadeInUp"> -->
+				<!-- <div class="work-list">
 					<div class="work-item">
 						<div class="row">
 							<div class="col-sm-6 col-sm-push-5 wow fadeInDown" data-wow-delay="0.5s">
-							<a href="https://www.behance.net/gallery/112114305/GU-" target="_blank">
-								<div class="imgbox">
-									<div class="imgbox__inner imgbox__inner-4-3">
-										<div class="image" style="background-image: url('img/work1.jpg');"></div>
+								<a href="https://www.behance.net/gallery/112114305/GU-" target="_blank">
+									<div class="imgbox">
+										<div class="imgbox__inner imgbox__inner-4-3">
+											<div class="image" style="background-image: url('img/work1.jpg');"></div>
+										</div>
 									</div>
+								</a>
+							</div>
+							<div class="col-sm-4 col-sm-pull-5 wow fadeInDown" data-wow-delay="0.5s">
+								<div class="work_item__text work-item__text-right">
+									<h3 class="work-item__title work-item__title-right">GU Website Regular Update</h3>
+									<p class="work-item__intro">平時首頁Banner，包含活動頁排版、<br>廣告素材和gif動畫製作。</p>
+									<a href="https://www.behance.net/gallery/112114305/GU-" target="_blank" class="text-btn text-btn-primary text-btn-lg">Show project</a>
 								</div>
-							</a>
-						</div>
-						<div class="col-sm-4 col-sm-pull-5 wow fadeInDown" data-wow-delay="0.5s">
-							<div class="work_item__text work-item__text-right">
-								<h3 class="work-item__title work-item__title-right">GU Website Regular Update</h3>
-								<!-- <p class="work-item__intro">平時首頁Banner，包含活動頁排版、<br>廣告素材和gif動畫製作。</p> -->
-								<a href="https://www.behance.net/gallery/112114305/GU-" target="_blank" class="text-btn text-btn-primary text-btn-lg">Show project</a>
 							</div>
 						</div>
-						</div>
-						
 					</div>
 
 					<div class="work-item">
@@ -147,33 +254,15 @@
 						<div class="col-sm-4 col-sm-push-1">
 							<div class="work_item__text">
 								<h3 class="work-item__title work-item__title-left">AG Neovo Meetboard Tips App design</h3>
-								<!-- <p class="work-item__intro">GU製作</p> -->
+								<p class="work-item__intro">GU製作</p>
 								<a href="https://www.behance.net/gallery/112118507/AG-Neovo-Meetboard-Design" target="_blank" class="text-btn text-btn-primary text-btn-lg">Show project</a>
 							</div>
 						</div>
 						</div>
 					</div>
+				</div> -->
 
-					<!-- <div class="work-item">
-						<div class="row">
-							<div class="col-sm-6 col-sm-push-6">
-							<div class="imgbox">
-								<div class="imgbox__inner imgbox__inner-4-3">
-									<div class="image" style="background-image: url('img/work/work1.jpg');"></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4 col-sm-pull-5">
-							<div class="work_item__text">
-								<h3 class="work-item__title work-item__title-right">Work-1</h3>
-								<p class="work-item__intro">GU日常製作</p>
-								<a href="#" class="text-btn text-btn-primary text-btn-lg">Show project</a>
-							</div>
-						</div>
-						</div>
-					</div> -->
-				</div>
-			</div>
+			<!-- </div> -->
 		</div>
 
 		<!-- End work -->
@@ -211,6 +300,8 @@
 	<script type="text/javascript" src="js/jquery.stellar.min.js"></script>
 	<script type="text/javascript" src="js/cursor.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/text.js"></script>
+	<script type="text/javascript" src="js/work_img.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<!-- End Js/Jq -->
 
