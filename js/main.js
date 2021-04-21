@@ -260,8 +260,8 @@ window.addEventListener('scroll', function(){
 							.css('overflow-y', 'hidden')
 							.css('overflow-x', 'scroll')
 							.scrollLeft(0);
-						$forward.show();
-						$backward.show();
+						$forward.hide();
+						$backward.hide();
 
 					}
 					else {

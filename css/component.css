@@ -1138,8 +1138,9 @@ body::-webkit-scrollbar-thumb{
 		}
 
 		.work__item article {
-			display: inline-block;
+			display: inline-table;
 			width: 18em;
+			height: 460px;
 			background: #fff;
 			text-align: center;
 			padding: 0 1em 3em 1em;
@@ -1194,24 +1195,29 @@ body::-webkit-scrollbar-thumb{
 
 	}
 
-
+	@media screen and (max-width: 736px){
+		.work__item .reel {
+		    padding: 0 0.5em 0 0.5em;
+		    touch-action:auto;
+		}
+	}
 
 /*-------------------------*/
 /* $Contact
 ---------------------------*/
 .contact{
-	/*padding-top: 40px;*/
-	/*padding-bottom: 40px;*/
+	padding-top: 40px;
+	padding-bottom: 40px;
 	border-top: 1px solid #ececec;
-	position: fixed;
+	/*position: absolute;*/
 	bottom: 60px;
-	height: 20px;
+	height: 20vh;
 	/*height: 100vh;*/
 }
 
 .rosie-email{
-	/*margin-bottom: 24px;*/
-	font-size: 16px;
+	margin-bottom: 30px;
+	font-size: 20px;
 	line-height: 20px;
 	text-align: center;
 	text-decoration: : none;
@@ -1224,7 +1230,7 @@ body::-webkit-scrollbar-thumb{
 
 .copyright{
 	display: block;
-	margin-top: 30px;
+	margin-top: 40px;
 	font-size: 16px;
 	color: #4b4b4b;
 }
@@ -1264,32 +1270,35 @@ body::-webkit-scrollbar-thumb{
 /*-------------------------*/
 /* $Cursor 
 ---------------------------*/
-.cursor-dot,
-.cursor-dot-outline {
-	z-index: 100;
-    pointer-events: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 50%;
-    opacity: 0;
-    transform: translate(-50%, -50%);
- 	-webkit-transition: -webkit-transform 300ms cubic-bezier(.175, .885, .32, 1.275);
- 	transition: -webkit-transform 300ms cubic-bezier(.175, .885, .32, 1.275);
- 	transition: transform 300ms cubic-bezier(.175, .885, .32, 1.275);
-	transition: transform 300ms cubic-bezier(.175, .885, .32, 1.275),
-	-webkit-transform 300ms cubic-bezier(.175, .885, .32, 1.275);
-}
 
-.cursor-dot {
-    width: 8px;
-    height:8px;
-    background-color: rgba(249, 177, 11,0.7);
-}
+@media(min-width: 1200px){
+	.cursor-dot,
+	.cursor-dot-outline {
+		z-index: 100;
+	    pointer-events: none;
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    border-radius: 50%;
+	    opacity: 0;
+	    transform: translate(-50%, -50%);
+	 	-webkit-transition: -webkit-transform 300ms cubic-bezier(.175, .885, .32, 1.275);
+	 	transition: -webkit-transform 300ms cubic-bezier(.175, .885, .32, 1.275);
+	 	transition: transform 300ms cubic-bezier(.175, .885, .32, 1.275);
+		transition: transform 300ms cubic-bezier(.175, .885, .32, 1.275),
+		-webkit-transform 300ms cubic-bezier(.175, .885, .32, 1.275);
+	}
 
-.cursor-dot-outline {
-    width: 50px;
-    height: 50px;
-    border:1px solid rgba(0,0,0,0.4);
-    background-color: transparent;
+	.cursor-dot {
+	    width: 8px;
+	    height:8px;
+	    background-color: rgba(249, 177, 11,0.7);
+	}
+
+	.cursor-dot-outline {
+	    width: 50px;
+	    height: 50px;
+	    border:1px solid rgba(0,0,0,0.8);
+	    background-color: transparent;
+	}
 }
